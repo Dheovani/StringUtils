@@ -8,6 +8,14 @@ int main()
 	assert(length(testLength) == 25);
 	println("Lenght test sucessfully completed!");
 
+	// Testing matrix_length
+	string testMatrixLength[3];
+	testMatrixLength[0] = "testMatrixLength";
+	testMatrixLength[1] = "testMatrixLength";
+	testMatrixLength[2] = NULL;
+	assert(matrix_length(testMatrixLength) == 2);
+	println("Matrix_length test sucessfully completed!");
+
 	// Testing count
 	string testCount = "Letter e four times";
 	assert(count(testCount, 'e') == 4);
@@ -54,10 +62,10 @@ int main()
 	string testSplit = "String to split";
 	string* splitted = split(testSplit, ' ');
 	assert(str_equals(splitted[0], "String"));
-	assert(str_equals(splitted[1], "to"));
-	assert(str_equals(splitted[2], "split"));
 	free(splitted[0]);
+	assert(str_equals(splitted[1], "to"));
 	free(splitted[1]);
+	assert(str_equals(splitted[2], "split"));
 	free(splitted[2]);
 	free(splitted);
 	println("Split test sucessfully completed!");

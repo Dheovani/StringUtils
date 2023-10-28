@@ -7,11 +7,20 @@ void println(string str)
 
 size_t length(string str)
 {
-	int i = 0;
-	while (str && str[i] && str[i] != '\0')
-		i++;
+	int size = 0;
+	while (str && str[size] && str[size] != '\0')
+		size++;
 
-	return i;
+	return size;
+}
+
+size_t matrix_length(string* matrix)
+{
+	int size = 0;
+	while (matrix && matrix[size] && matrix[size] != NULL)
+		size++;
+
+	return size;
 }
 
 string substr(unsigned int begin, unsigned int end, string str)
@@ -112,7 +121,7 @@ string* split(string str, char separator)
 	if (cont == NOT_FOUND)
 		printf("Couldn't split the string. Separator %c not found\n", separator), exit(EXIT_FAILURE);
 
-	string* tokens = (string*)malloc((cont + 1) * sizeof(string));
+	string* tokens = (string*)malloc((cont + 2) * sizeof(string));
 	if (!tokens)
 		println("Error allocating memory."), exit(EXIT_FAILURE);
 
@@ -120,8 +129,8 @@ string* split(string str, char separator)
 	strSep[0] = separator;
 	strSep[1] = '\0';
 
-	int index = 0;
-	for (int i = 0; i <= cont; i++) {
+	int i, index = 0;
+	for (i = 0; i <= cont; i++) {
 		int oldIndex = index;
 		index = index_of(str, strSep, index);
 
@@ -132,12 +141,12 @@ string* split(string str, char separator)
 		index++;
 	}
 
-	tokens[cont] = '\0';
+	for (; i < (int)matrix_length(tokens); i++)
+		tokens[i] = NULL;
 
 	free(strSep);
 	return tokens;
 }
-
 
 bool is_empty(string str)
 {

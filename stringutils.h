@@ -23,6 +23,13 @@ void println(string str);
 size_t length(string str);
 
 /**
+ * Returns the length of a given matrix
+ * @param string* str
+ * @return size_t
+ */
+size_t matrix_length(string* matrix);
+
+/**
  * Counts the amount of times a char is found in a given string (considering case)
  * @param string str
  * @param char search
