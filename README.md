@@ -9,6 +9,7 @@ StringUtils is a lightweight C library that provides various string utility func
 ## Functions 🛠️
 
 - `length`: Get the length of a string.
+- `matrix_length`: Get the length of a matrix.
 - `count`: Count the occurrences of a character in a string.
 - `substr`: Get a substring of a string.
 - `index_of`: Find the index of a substring in a string.
