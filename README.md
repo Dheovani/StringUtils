@@ -2,15 +2,6 @@
 
 A collection of handy string utility functions for all your string manipulation needs! 😄
 
-## Table of Contents 📜
-
-- [Introduction](#introduction)
-- [Functions](#functions)
-- [Getting Started](#getting-started)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
-
 ## Introduction 💡
 
 StringUtils is a lightweight C library that provides various string utility functions to make your string operations more convenient and efficient. It includes functions for string splitting, searching, and more!
